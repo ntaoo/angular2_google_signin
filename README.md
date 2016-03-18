@@ -7,18 +7,18 @@ This package consists of
  * The dart interop code of Google Sign-In JavaScript client (using package:js).
  * Angular2 component to wrap the interop code.
 
-For more infomation about Google Sign-In JavaScript client, Please see
+For more information about Google Sign-In JavaScript client, See
 https://developers.google.com/identity/sign-in/web/sign-in
 
 ## Usage
 
+Add this script tag below in the head tag of web/index.html
 ```html
-// Add this script tag below in the head tag of web/index.html
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 ```
 
+Import this in a ng2 component.
 ```dart
-// Import this in a ng2 component.
 import 'package:angular2_google_signin/angular2_google_signin.dart';
 
 // Add `GoogleSignin` on directives.
@@ -29,7 +29,7 @@ import 'package:angular2_google_signin/angular2_google_signin.dart';
 )
 class AppComponent {
 
-  googleSigninSuccess(GoogleSignInSuccess event) async {
+  onGoogleSigninSuccess(GoogleSignInSuccess event) async {
     GoogleUser googleUser = event.googleUser;
     String id = googleUser.getId();
     assert(googleUser.isSignedIn());
@@ -56,12 +56,14 @@ class AppComponent {
 }
 ```
 
+In a ng2 component template, put `<google-signin>` with attributes of render options and init params.
+`clientId` attribute is required. You don't need to write `google-signin-client_id` meta tag.
 ```html
-// In a ng2 component template, put `<google-signin>` with attributes of render options and init params.
-// `clientId` attribute is required. You don't need to write `google-signin-client_id` meta tag.
 <google-signin clientId="..." width="240" theme="dark" scope="email profile" longTitle="true"
                  (googleSigninSuccess)="onGgoogleSigninSuccess($event)"></google-signin>
 ```
+
+Also see `example/``.
 
 ## Features and bugs
 
