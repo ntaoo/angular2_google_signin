@@ -1,6 +1,6 @@
 name: angular2_google_signin
 description: Angular2 google sign-in component.
-version: 0.0.1
+version: 0.1.0
 author: ntaoo <ntaoo.g@gmail.com>
 homepage: https://github.com/ntaoo/angular2_google_signin
 
@@ -8,7 +8,7 @@ environment:
   sdk: '>=1.13.1 <2.0.0'
 
 dependencies:
-  angular2: '>=2.0.0-beta.10'
+  angular2: ^2.0.0-beta.9
   js: ^0.6.0
 
 dev_dependencies:
