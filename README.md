@@ -17,11 +17,11 @@ Add this script tag below in the head tag of web/index.html
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 ```
 
-Import this in a ng2 component.
+Import this in a ng2 component and add `GoogleSignin` on the directives.
+
 ```dart
 import 'package:angular2_google_signin/angular2_google_signin.dart';
 
-// Add `GoogleSignin` on directives.
 @Component(
     selector: 'app-component',
     templateUrl: 'template/app_component.html',
@@ -63,7 +63,7 @@ In a ng2 component template, put `<google-signin>` with attributes of render opt
                  (googleSigninSuccess)="onGgoogleSigninSuccess($event)"></google-signin>
 ```
 
-Also see `example/``.
+Also see `example/`.
 
 ## Features and bugs
 
