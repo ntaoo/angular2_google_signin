@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.0+1
+
+- Clean up code, fix README, and update deps.
+
 ## 0.1.0
 
 - Publish with example (still no test code).
