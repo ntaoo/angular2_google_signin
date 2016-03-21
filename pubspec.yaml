@@ -11,8 +11,5 @@ dependencies:
   angular2: ^2.0.0-beta.9
   js: ^0.6.0
 
-dev_dependencies:
-  test: '>=0.12.0 <0.13.0'
-
 transformers:
 - angular2

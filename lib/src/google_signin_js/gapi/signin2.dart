@@ -10,12 +10,19 @@ external void render(String id, Options options);
 @anonymous
 class Options {
   external String get scope;
+
   external int get width;
+
   external int get height;
+
   external bool get longtitle;
+
   external String get theme;
+
   external Function get onsuccess;
+
   external Function get onfailure;
+
   external factory Options(
       {String scope,
       int width,

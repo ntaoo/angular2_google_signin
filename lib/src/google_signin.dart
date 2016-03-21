@@ -1,9 +1,10 @@
 import 'package:angular2/angular2.dart';
 import 'package:js/js.dart';
+
 import 'events.dart';
 import 'google_signin_js/gapi.dart';
-import 'google_signin_js/gapi/signin2.dart';
 import 'google_signin_js/gapi/auth2.dart';
+import 'google_signin_js/gapi/signin2.dart';
 
 @Component(
     selector: 'google-signin',
@@ -63,6 +64,21 @@ class GoogleSignin implements AfterViewInit {
     }));
   }
 
+  void _handleFailure() {
+    googleSignInFailure.add(new GoogleSignInFailure());
+  }
+
+  void _handleSuccess(GoogleUser googleUser) {
+    googleSigninSuccess.add(new GoogleSignInSuccess(googleUser));
+  }
+
+  bool _nullableParseBool(String boolString) {
+    if (boolString == 'true') return true;
+    if (boolString == 'false') return false;
+    if (boolString == null) return null;
+    throw ('true, false, or null are expected.');
+  }
+
   _renderButton() {
     render(
         id,
@@ -75,20 +91,5 @@ class GoogleSignin implements AfterViewInit {
             onsuccess: allowInterop(
                 (GoogleUser googleUser) => _handleSuccess(googleUser)),
             onfailure: allowInterop(() => _handleFailure())));
-  }
-
-  void _handleSuccess(GoogleUser googleUser) {
-    googleSigninSuccess.add(new GoogleSignInSuccess(googleUser));
-  }
-
-  void _handleFailure() {
-    googleSignInFailure.add(new GoogleSignInFailure());
-  }
-
-  bool _nullableParseBool(String boolString) {
-    if (boolString == 'true') return true;
-    if (boolString == 'false') return false;
-    if (boolString == null) return null;
-    throw ('true, false, or null are expected.');
   }
 }
