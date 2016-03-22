@@ -1,3 +1,5 @@
+# Deprecated. Moved to [https://pub.dartlang.org/packages/ng2_g_signin](https://pub.dartlang.org/packages/ng2_g_signin)
+
 # angular2_google_signin
 
 Angular2 Dart google sign-in component.
